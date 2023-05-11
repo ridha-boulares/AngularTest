@@ -1,0 +1,46 @@
+
+<form #f="ngForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">id</label>
+      <input type="number" class="form-control" name="id" placeholder="id" [(ngModel)]="video.id" required #id="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf="id.invalid && id.touched">
+      <p *ngIf="id.errors?.['required']">id is required</p>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">title</label>
+        <input type="text" class="form-control" name="title" placeholder="title"[(ngModel)]="video.title" required #title="ngModel">
+      </div>
+      <div class="alert alert-danger" *ngIf="title.invalid && title.touched">
+        <p *ngIf="title.errors?.['required']">title is required</p>
+      
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">price</label>
+        <input type="number" class="form-control" name="genre" placeholder="genre" [(ngModel)]="video.genre" required #genre="ngModel">
+      </div>
+      <div class="alert alert-danger" *ngIf="genre.invalid && genre.touched">
+        <p *ngIf="genre.errors?.['required']">price is required</p>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">quantity</label>
+        <input type="number" class="form-control" name="public" placeholder="public" [(ngModel)]="video.public" required #public="ngModel">
+      </div>
+      <div class="alert alert-danger" *ngIf="public.invalid && public.touched">
+        <p *ngIf="public.errors?.['required']">quantity is required</p>
+     
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">nbrShared</label>
+        <input type="number" class="form-control" name="nbrShares" placeholder="nbrShared" [(ngModel)]="video.nbrShares" required #nbrShares="ngModel">
+      </div>
+      <div class="alert alert-danger" *ngIf="public.invalid && public.touched">
+        <p *ngIf="nbrShares.errors?.['required']">quantity is required</p>
+     
+      </div>
+    <button type="submit" class="btn btn-primary" [disabled]="f.invalid" (click)="ajoutervideo()">Submit</button>
+  </form>
+{{video.id}}
+{{video.title}}
+
+<!-- hedhi besh ntesti si l objet 9a3ed yet3aba ou non -->

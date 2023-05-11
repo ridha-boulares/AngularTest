@@ -1,0 +1,25 @@
+{
+  "video": [
+    {
+      "id": 1,
+      "title": "video1",
+      "genre": "thriller",
+      "public": true,
+      "nbrShared": 20
+    },
+    {
+      "id": 2,
+      "title": "ttt",
+      "genre": 10,
+      "public": 12,
+      "nbrShares": 12
+    },
+    {
+      "id": 5,
+      "title": "tt",
+      "genre": 100,
+      "public": 1,
+      "nbrShares": 120
+    }
+  ]
+}

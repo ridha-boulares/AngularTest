@@ -1,0 +1,40 @@
+
+<!---
+<p>product works!</p>
+{{title}}
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>price</th>
+        <th>quantity</th>
+        <th>like</th>
+    </tr>
+    <tr *ngFor="let p of listProduct">
+        <th>{{p.id}}</th>
+        <th>{{p.title}}</th>
+        <th>{{p.price}}</th>
+        <th>{{p.quantity}}</th>
+        <th>{{p.like}}</th>
+    </tr>
+</table>
+-->
+
+<div class="row">
+    <div class="col-md-4" *ngFor="let p of listProduct, let i=index">
+        <div >
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top"
+                    src="https://www.apple.com/v/product-red/x/images/meta/og_world_aids__ccal5yhp82b6_day.png?202212020339"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Product: {{p.title}}</h5>
+                    <p class="card-text">genre: {{p.genre}}</p>
+                    <p class="card-text">public: {{p.public}}</p>
+                    <p class="card-text">nbrShares: {{p.nbrShares}}</p>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
