@@ -16,9 +16,9 @@ pipeline {
             }
         }
         
-        stage('Test') {
+        stage('launch') {
             steps {
-                sh 'ng test'
+                sh 'ng serve -o'
             }
         }
         
