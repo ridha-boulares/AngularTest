@@ -8,7 +8,7 @@ pipeline {
             }
             post {
                 failure {
-                    emailext body: 'npm install failure', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Pipeline Failure'
+                    emailext body: 'npm install failure', recipientProviders: $DEFAULT_RECIPIENTS , subject: 'Pipeline Failure'
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
             }
             post {
                 failure {
-                    emailext body: 'ng build failure', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Pipeline Failure'
+                    emailext body: 'ng build failure', recipientProviders: $DEFAULT_RECIPIENTS, subject: 'Pipeline Failure'
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
             }
             post {
                 failure {
-                    emailext body: 'ng serve failure', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Pipeline Failure'
+                    emailext body: 'ng serve failure', recipientProviders: $DEFAULT_RECIPIENTS, subject: 'Pipeline Failure'
                 }
             }
         }
