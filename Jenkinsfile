@@ -8,7 +8,7 @@ pipeline {
             }
             post {
                 failure {
-                    emailext body: 'npm install failure', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Pipeline Failure'
+                    emailext (attachLog: true, body: 'this stage was failed, this is the build result', subject: 'Install failure', to: 'metjaku@gmail.com')
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
             }
             post {
                 failure {
-                    emailext body: 'ng build failure', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Pipeline Failure'
+                    emailext (attachLog: true, body: 'this stage was failed, this is the build result', subject: 'Build failure', to: 'metjaku@gmail.com')
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
             }
             post {
                 failure {
-                    emailext body: 'ng serve failure', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Pipeline Failure'
+                     emailext (attachLog: true, body: 'this stage was failed, this is the build result', subject: 'Launch failure', to: 'metjaku@gmail.com')
                 }
             }
         }
