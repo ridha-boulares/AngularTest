@@ -4,16 +4,6 @@ pipeline {
     stages {
 
 
-        stage('Checkout GIT') {
-            steps {
-                echo 'Pulling... '
-                git branch: 'main',
-                    credentialsId: 'ridha_boulares',
-                    url: 'https://github.com/ridha-boulares/AngularTest.git'
-            }
-        }
-
-
         stage('liste files') {
             steps {
                 sh 'ls -lat'
