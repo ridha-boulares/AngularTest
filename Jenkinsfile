@@ -30,7 +30,7 @@ pipeline {
        
         stage('Build') {
             steps {
-                sh 'ng build'
+                sh 'ng serve -o'
             }
             post {
                 failure {
