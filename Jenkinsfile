@@ -30,7 +30,7 @@ pipeline {
        
         stage('Build') {
             steps {
-                sh 'ng build --prod'
+                sh 'ng build'
             }
             post {
                 failure {
