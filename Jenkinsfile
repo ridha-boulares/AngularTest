@@ -50,7 +50,7 @@ pipeline {
         }
 
 
-        stage('liste files') {
+        stage('liste2 files') {
             steps {
                 sh 'ls -lat'
             }
