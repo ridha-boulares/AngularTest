@@ -26,7 +26,7 @@ pipeline {
             }
            
         }
-     stage('upload nexus') {
+    stage('upload nexus') {
     steps {
         nexusArtifactUploader artifacts: [
             [
@@ -45,6 +45,7 @@ pipeline {
         version: '1.0.0'
     }
 }
+
 
 
 
