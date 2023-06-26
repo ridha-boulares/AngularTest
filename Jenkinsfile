@@ -26,7 +26,7 @@ pipeline {
             }
            
         }
-      stage('Build') {
+      stage('upload nexus') {
             steps {
                nexusArtifactUploader artifacts: [
                  [
