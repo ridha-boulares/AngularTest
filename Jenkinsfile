@@ -26,26 +26,26 @@ pipeline {
             }
            
         }
-      stage('upload nexus') {
-            steps {
-               nexusArtifactUploader artifacts: [
-                 [
-                   artifactId: 'application',
-                   classifier: '',
-                   file: 'dist/',
-                   type: 'zip'
-                 ]
-               ], 
-                 credentialsId: 'nexus',
-                 groupId: 'com.example',
-                 nexusUrl: 'localhost:8081',
-                 nexusVersion: 'nexus3',
-                 protocol: 'http',
-                 repository: 'noly-front',
-                 version: '1.0.0'
-            }
-           
-        }
+     stage('upload nexus') {
+    steps {
+        nexusArtifactUploader artifacts: [
+            [
+                artifactId: 'application',
+                classifier: '',
+                file: 'dist/',
+                type: 'zip'
+            ]
+        ],
+        credentialsId: 'nexus',
+        groupId: 'com.example',
+        nexusUrl: 'http://localhost:8081/',
+        nexusVersion: 'nexus3',
+        protocol: 'http',
+        repository: 'noly-front',
+        version: '1.0.0'
+    }
+}
+
 
 
         stage('liste2 files') {
