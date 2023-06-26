@@ -29,7 +29,7 @@ pipeline {
     stage('Upload Nexus') {
             steps {
                 script {
-                    def nexusUrl = 'http://192.168.217.134:8081/'
+                    def nexusUrl = '192.168.217.134:8081'
                     def repository = 'noly-front'
                     def fileToUpload = 'dist/'
 
