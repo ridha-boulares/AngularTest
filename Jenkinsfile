@@ -8,11 +8,7 @@ pipeline {
             steps {
                 sh 'ls -lat'
             }
-            post {
-                failure {
-                    emailext (attachLog: true, body: 'this stage was failed, this is the build result', subject: 'listing failure', to: 'metjaku@gmail.com')
-                }
-            }
+           
         }
 
 
@@ -20,23 +16,15 @@ pipeline {
             steps {
                 sh 'npm install'
             }
-            post {
-                failure {
-                    emailext (attachLog: true, body: 'this stage was failed, this is the build result', subject: 'Install failure', to: 'metjaku@gmail.com')
-                }
-            }
+            
         }
 
        
         stage('Build') {
             steps {
-                sh 'ng serve -o'
+                sh 'CI=false npm run build'
             }
-            post {
-                failure {
-                    emailext (attachLog: true, body: 'this stage was failed, this is the build result', subject: 'build failure', to: 'metjaku@gmail.com')
-                }
-            }
+           
         }
 
 
@@ -44,13 +32,14 @@ pipeline {
             steps {
                 sh 'ls -lat'
             }
-            post {
-                failure {
-                    emailext (attachLog: true, body: 'this stage was failed, this is the build result', subject: 'listing failure', to: 'metjaku@gmail.com')
-                }
-            }
+           
         }
-
+         stage('launch') {
+            steps {
+                sh 'ng serve -o'
+            }
+           
+        }
 
         // stage('Launch') {
         //     steps {
