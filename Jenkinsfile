@@ -26,6 +26,26 @@ pipeline {
             }
            
         }
+      stage('Build') {
+            steps {
+               nexusArtifactUploader artifacts: [
+                 [
+                   artifactId: 'application',
+                   classifier: '',
+                   file: 'target/application-1.0.0.war',
+                   type: 'war'
+                 ]
+               ], 
+                 credentialsId: 'nexus',
+                 groupId: 'noly-front',
+                 nexusUrl: 'localhost:8081/',
+                 nexusVersion: 'nexus3',
+                 protocol: 'http',
+                 repository: 'http://localhost:8081/repository/noly-front/',
+                 version: '1.0.0'
+            }
+           
+        }
 
 
         stage('liste2 files') {
