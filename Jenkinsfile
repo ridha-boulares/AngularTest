@@ -32,12 +32,12 @@ pipeline {
                  [
                    artifactId: 'application',
                    classifier: '',
-                   file: 'target/application-1.0.0.war',
-                   type: 'war'
+                   file: 'dist/',
+                   type: 'zip'
                  ]
                ], 
                  credentialsId: 'nexus',
-                 groupId: 'noly-front',
+                 groupId: 'com.example',
                  nexusUrl: 'localhost:8081/',
                  nexusVersion: 'nexus3',
                  protocol: 'http',
