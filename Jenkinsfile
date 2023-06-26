@@ -38,7 +38,7 @@ pipeline {
         ],
         credentialsId: 'nexus',
         groupId: 'com.example',
-        nexusUrl: 'http://localhost:8081/',
+        nexusUrl: '192.168.217.134:8081',
         nexusVersion: 'nexus3',
         protocol: 'http',
         repository: 'noly-front',
