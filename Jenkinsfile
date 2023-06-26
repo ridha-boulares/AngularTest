@@ -26,25 +26,35 @@ pipeline {
             }
            
         }
-    stage('upload nexus') {
-    steps {
-        nexusArtifactUploader artifacts: [
-            [
-                artifactId: 'application',
-                classifier: '',
-                file: 'dist/',
-                type: 'zip'
-            ]
-        ],
-        credentialsId: 'nexus',
-        groupId: 'com.example',
-        nexusUrl: '192.168.217.134:8081',
-        nexusVersion: 'nexus3',
-        protocol: 'http',
-        repository: 'noly-front',
-        version: '1.0.0'
-    }
-}
+    stage('Upload Nexus') {
+            steps {
+                script {
+                    def nexusUrl = 'http://192.168.217.134:8081/'
+                    def repository = 'noly-front'
+                    def fileToUpload = 'dist/'
+
+                    nexusArtifactUploader artifacts: [
+                        [
+                            classifier: '',
+                            file: fileToUpload,
+                            type: 'zip'
+                        ]
+                    ],
+                    credentialsId: 'nexus',
+                    nexusUrl: nexusUrl,
+                    nexusVersion: 'nexus3',
+                    protocol: 'http',
+                    repository: repository
+                }
+            }
+        }
+  
+
+
+
+
+
+
 
 
 
