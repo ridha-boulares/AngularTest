@@ -43,7 +43,7 @@ pipeline {
                  [
                    [artifactId: 'my-artifact', 
                     classifier: '', 
-                    file: 'dist/dist.tar.gz', 
+                    file: 'dist.tar.gz', 
                     type: 'tar.gz']
                  ], 
                  credentialsId: 'nexus', 
