@@ -51,7 +51,7 @@ pipeline {
                  nexusUrl: '192.168.217.133:8081', 
                  nexusVersion: 'nexus3', 
                  protocol: 'http', 
-                 repository: '/repository/jenkins', 
+                 repository: 'jenkins', 
                  version: '1.0.0'
             }
         }
