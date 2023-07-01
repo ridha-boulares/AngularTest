@@ -36,12 +36,16 @@ pipeline {
         stage('Publish to Nexus') {
             steps {
                 nexusArtifactUploader artifacts: [
-                    [
+                    [  
+                        artifactId:'test',
+                        classifier:'',
                         file: 'dist.tar.gz',
                         type: 'tar.gz'
                     ]
                 ],
                 credentialsId: 'nexus',
+                groupId:'test',
+                version:'0.0.0',
                 nexusUrl: 'http://192.168.217.133:8081',
                 nexusVersion: 'nexus3',
                 protocol: 'http',
