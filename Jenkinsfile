@@ -35,9 +35,13 @@ pipeline {
                 sh 'tar -czf dist.tar.gz dist'
             }
         }
-        
+        stage('test nex'){
+            steps{
+                sh 'curl -u <username>:<password> -X GET http://192.168.217.133:8081/repository/jenkins/'
+        }
+        }
       
-  stage('Publish to Nexus') {
+  /*stage('Publish to Nexus') {
             steps {
                nexusArtifactUploader artifacts:
                  [
@@ -54,7 +58,7 @@ pipeline {
                  repository: 'jenkins', 
                  version: '1.0.0'
             }
-        }
+        }*/
 
       
 
