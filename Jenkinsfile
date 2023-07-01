@@ -29,6 +29,13 @@ pipeline {
             }
            
         }
+       stage('Zip Dist') {
+            steps {
+                // Zip the 'dist' directory
+                sh 'zip -r dist.zip dist'
+            }
+        }
+        
       
   stage('Publish to Nexus') {
             steps {
@@ -36,7 +43,7 @@ pipeline {
                  [
                    [artifactId: 'my-artifact', 
                     classifier: '', 
-                    file: 'dist/my-artifact.zip', 
+                    file: 'dist/dist.zip', 
                     type: 'zip']
                  ], 
                  credentialsId: 'nexus', 
