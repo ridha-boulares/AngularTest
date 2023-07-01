@@ -41,24 +41,23 @@ pipeline {
         }
         }
       
-  /*stage('Publish to Nexus') {
+  stage('Publish to Nexus') {
             steps {
                nexusArtifactUploader artifacts:
                  [
-                   [artifactId: 'my-artifact', 
-                    classifier: '', 
+                   [
                     file: 'dist.tar.gz', 
                     type: 'tar.gz']
                  ], 
                  credentialsId: 'nexus', 
-                 groupId: 'com.example', 
+                
                  nexusUrl: '192.168.217.133:8081', 
                  nexusVersion: 'nexus3', 
                  protocol: 'http', 
                  repository: 'jenkins', 
-                 version: '1.0.0'
+              
             }
-        }*/
+        }
 
       
 
