@@ -13,11 +13,15 @@ pipeline {
 
 
         stage('Install Dependencies') {
-            steps {
-                sh 'npm install --legacy-peer-deps'
-            }
-            
+    steps {
+        script {
+            def npmBin = sh(script: 'which npm', returnStdout: true).trim()
+            env.PATH = "${npmBin}:${env.PATH}"
+            sh 'npm install --legacy-peer-deps'
         }
+    }
+}
+
 
        
         stage('Build') {
