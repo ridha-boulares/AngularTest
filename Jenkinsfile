@@ -32,16 +32,17 @@ pipeline {
       
   stage('Publish to Nexus') {
             steps {
-                nexusPublisher nexusInstanceId: 'nexus',
-                               protocol: 'http',
-                               nexusUrl: 'http://192.168.217.133:8081',
-                               repository: 'jenkins',
-                               groupId: 'com.example',
-                               version: '1.0.0',
-                               artifact: 'dist/*'
+                nexusArtifactUploader nexusInstanceId: 'nexus',
+                                      repositoryUrl: 'http://192.168.217.133:8081/repository/jenkins',
+                                      groupId: 'com.example',
+                                      version: '1.0.0',
+                                      artifacts: [
+                                          // Specify the artifact details
+                                          [artifactId: 'my-artifact', classifier: '', file: 'dist/my-artifact.zip', type: 'zip']
+                                      ],
+                                      credentialsId: 'nexus'
             }
         }
-    
 
 
 
