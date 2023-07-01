@@ -30,19 +30,18 @@ pipeline {
            
         }
       
-  stage('Upload Nexus') {
+  stage('Publish to Nexus') {
             steps {
-                script {
-                  
-                    def fileToUpload = 'dist/'
-
-                    sh "curl -v -u admin:Facebook1 --upload-file ${fileToUpload} http://192.168.217.133:8081/repository/jenkins/"
-
-                    // or you can use Nexus REST API for more advanced options
-                    // sh "curl -v -u username:password -X POST -H 'Content-Type: application/json' -d '{\"parameters\": {\"file\": \"${fileToUpload}\", \"type\": \"zip\"}}' ${nexusUrl}/service/rest/v1/components?repository=${repository}"
-                }
+                nexusPublisher nexusInstanceId: 'nexus',
+                               protocol: 'http',
+                               nexusUrl: 'http://192.168.217.133:8081',
+                               repository: 'jenkins',
+                               groupId: 'com.example',
+                               version: '1.0.0',
+                               artifact: 'dist/*'
             }
         }
+    
 
 
 
