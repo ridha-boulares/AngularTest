@@ -14,7 +14,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'sudo su npm --legacy-peer-deps'
+                sh 'npm install --legacy-peer-deps'
             }
             
         }
@@ -22,7 +22,7 @@ pipeline {
        
         stage('Build') {
             steps {
-                sh 'sudo su CI=false /home/stage/.nvm/versions/node/v16.16.0/bin/npm run build'
+                sh 'CI=false npm run build'
             }
            
         }
@@ -68,7 +68,7 @@ pipeline {
         }
          stage('launch') {
             steps {
-                sh 'sudo su ng serve -o'
+                sh 'ng serve -o'
             }
            
         }
