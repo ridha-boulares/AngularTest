@@ -26,12 +26,7 @@ pipeline {
             }
            
         }
-        stage('launch') {
-            steps {
-                sh 'ng s -o'
-            }
-           
-        }
+      
   /*  stage('Upload Nexus') {
             steps {
                 script {
@@ -52,8 +47,8 @@ pipeline {
                     protocol: 'http',
                     repository: repository
                 }
-            }*/
-        }
+            }
+        }*/
   
 
 
