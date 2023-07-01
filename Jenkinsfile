@@ -46,7 +46,7 @@ pipeline {
                 credentialsId: 'nexus',
                 groupId:'test',
                 version:'0.0.0',
-                nexusUrl: 'http://192.168.217.133:8081',
+                nexusUrl: '192.168.217.133:8081',
                 nexusVersion: 'nexus3',
                 protocol: 'http',
                 repository: 'jenkins'
