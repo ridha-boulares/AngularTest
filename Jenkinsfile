@@ -12,9 +12,12 @@ pipeline {
 
 
       
-        stage('Install Dependencies') {
+       stage('Install Dependencies') {
             steps {
-                sh 'source ~/.bashrc && npm install --legacy-peer-deps'
+                script {
+                    env.PATH = "${tool 'NodeJS'}/bin:${env.PATH}"
+                    sh 'npm install --legacy-peer-deps'
+                }
             }
         }
 
