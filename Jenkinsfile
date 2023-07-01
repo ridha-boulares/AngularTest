@@ -14,7 +14,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                sh '/home/stage/.nvm/versions/node/v16.16.0/bin/npm install --legacy-peer-deps'
             }
             
         }
@@ -22,7 +22,7 @@ pipeline {
        
         stage('Build') {
             steps {
-                sh 'CI=false npm run build'
+                sh 'CI=false /home/stage/.nvm/versions/node/v16.16.0/bin/npm run build'
             }
            
         }
