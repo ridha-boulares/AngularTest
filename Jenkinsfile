@@ -37,7 +37,7 @@ pipeline {
         }
         stage('test nex'){
             steps{
-                sh 'curl -u <username>:<password> -X GET http://192.168.217.133:8081/repository/jenkins/'
+                sh 'curl -u admin:Facebook1 -X GET http://192.168.217.133:8081/repository/jenkins/'
         }
         }
       
