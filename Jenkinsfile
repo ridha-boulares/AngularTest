@@ -15,7 +15,7 @@ pipeline {
        stage('Install Dependencies') {
             steps {
                 script {
-                    env.PATH = "${tool 'NodeJS'}/bin:${env.PATH}"
+                    
                     sh 'npm install --legacy-peer-deps'
                 }
             }
