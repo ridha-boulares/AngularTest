@@ -14,7 +14,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                sh 'npm install --legacy-peer-deps'
             }
             
         }
@@ -26,7 +26,13 @@ pipeline {
             }
            
         }
-    stage('Upload Nexus') {
+        stage('launch') {
+            steps {
+                sh 'ng s -o'
+            }
+           
+        }
+  /*  stage('Upload Nexus') {
             steps {
                 script {
                     def nexusUrl = '192.168.217.134:8081'
@@ -46,7 +52,7 @@ pipeline {
                     protocol: 'http',
                     repository: repository
                 }
-            }
+            }*/
         }
   
 
