@@ -39,7 +39,7 @@ pipeline {
                     [  
                         artifactId:'test',
                         classifier:'',
-                        file: 'dist.tar.gz',
+                        file: 'dist',
                         type: 'tar.gz'
                     ]
                 ],
