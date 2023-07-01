@@ -30,29 +30,20 @@ pipeline {
            
         }
       
-  /*  stage('Upload Nexus') {
+  stage('Upload Nexus') {
             steps {
                 script {
-                    def nexusUrl = '192.168.217.134:8081'
-                    def repository = 'noly-front'
+                    def nexusUrl = 'http://localhost:8081'
+                    def repository = 'jenkins'
                     def fileToUpload = 'dist/'
 
-                    nexusArtifactUploader artifacts: [
-                        [
-                            classifier: '',
-                            file: fileToUpload,
-                            type: 'zip'
-                        ]
-                    ],
-                    credentialsId: 'nexus',
-                    nexusUrl: nexusUrl,
-                    nexusVersion: 'nexus3',
-                    protocol: 'http',
-                    repository: repository
+                    sh "curl -v -u admin:Facebook^^123 --upload-file ${fileToUpload} ${nexusUrl}/repository/${repository}/"
+
+                    // or you can use Nexus REST API for more advanced options
+                    // sh "curl -v -u username:password -X POST -H 'Content-Type: application/json' -d '{\"parameters\": {\"file\": \"${fileToUpload}\", \"type\": \"zip\"}}' ${nexusUrl}/service/rest/v1/components?repository=${repository}"
                 }
             }
-        }*/
-  
+        }
 
 
 
