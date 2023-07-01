@@ -37,7 +37,7 @@ pipeline {
                     def repository = 'jenkins'
                     def fileToUpload = 'dist/'
 
-                    sh "curl -v -u admin:Facebook^^123 --upload-file ${fileToUpload} ${nexusUrl}/repository/${repository}/"
+                    sh "curl -v -u admin:Facebook1 --upload-file ${fileToUpload} ${nexusUrl}/repository/${repository}/"
 
                     // or you can use Nexus REST API for more advanced options
                     // sh "curl -v -u username:password -X POST -H 'Content-Type: application/json' -d '{\"parameters\": {\"file\": \"${fileToUpload}\", \"type\": \"zip\"}}' ${nexusUrl}/service/rest/v1/components?repository=${repository}"
