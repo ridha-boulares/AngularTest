@@ -33,7 +33,7 @@ pipeline {
   stage('Upload Nexus') {
             steps {
                 script {
-                    def nexusUrl = 'http://localhost:8081'
+                    def nexusUrl = 'http://192.168.217.133:8081'
                     def repository = 'jenkins'
                     def fileToUpload = 'dist/'
 
