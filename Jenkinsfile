@@ -32,7 +32,7 @@ pipeline {
        stage('Zip Dist') {
             steps {
                 // Zip the 'dist' directory
-                sh 'zip -r dist.zip dist'
+                sh 'tar -czf dist.tar.gz dist'
             }
         }
         
@@ -43,8 +43,8 @@ pipeline {
                  [
                    [artifactId: 'my-artifact', 
                     classifier: '', 
-                    file: 'dist/dist.zip', 
-                    type: 'zip']
+                    file: 'dist/dist.tar.gz', 
+                    type: 'tar.gz']
                  ], 
                  credentialsId: 'nexus', 
                  groupId: 'com.example', 
