@@ -37,7 +37,7 @@ pipeline {
             steps {
                 nexusArtifactUploader artifacts: [
                     [  
-                        artifactId:'test',
+                        artifactId:'dist',
                         classifier:'',
                         file: 'dist.tar.gz',
                         type: 'tar.gz'
