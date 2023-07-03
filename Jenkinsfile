@@ -1,5 +1,3 @@
-def app
-
 pipeline {
     agent any
     stages {
@@ -56,18 +54,20 @@ pipeline {
 }*/
 
 
-        stage('Docker Build') {
-            steps {
-                app = docker.build("mohamedridhaa/angular_test:tagname")
-            }
+  stage('Docker Build') {
+    steps {
+        def app = docker.build("mohamedridhaa/angular_test:tagname")
+    }
+}
+      
+stage('Docker Push') {
+    steps {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+            app.push()
         }
-              stage('Docker Push') {
-            steps {
-                app = docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){
-                  app.push()
-                }
-            }
-        }
+    }
+}
+
 
         stage('Launch') {
             steps {
