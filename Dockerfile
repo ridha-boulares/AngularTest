@@ -11,15 +11,13 @@ RUN npm install -g @angular/cli@13.0.0
 RUN npm install -g http-server
 
 # Set working directory
-WORKDIR /usr/apps/docker-test
+WORKDIR /usr/apps/docker-test/dist/test
 
 # Copy only the necessary files (e.g., the 'dist' directory)
-COPY dist/test /usr/apps/docker-test/dist
-
-RUN ng serve
+COPY dist/test /usr/apps/docker-test/dist/test
 
 # Expose the port on which the application will run
-EXPOSE 8080
+EXPOSE 8181
 
-# Run the http-server command
-CMD ["http-server", "-s"]
+# Run the http-server command to serve the application
+CMD ["http-server", "-p", "8080", "-c-1", "dist"]
