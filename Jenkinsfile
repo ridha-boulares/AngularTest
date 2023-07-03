@@ -66,8 +66,8 @@ pipeline {
 stage('Docker Push') {
     steps {
         script {
-            docker.withRegistry {
-                def app.push()
+          sh 'docker login -u mohamedRidhaa -p Facebook1'
+          sh 'docker push mohamedridhaa/angular_test:tagname
             }
         }
     }
