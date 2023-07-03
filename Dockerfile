@@ -6,5 +6,6 @@ RUN apt-get update && apt-get install -y nodejs npm
 RUN npm install -g @angular/cli@13.0.0
 RUN npm install -g http-server
 ADD . /usr/apps/docker-test
+RUN ng serve
 CMD ["http-server","-s"]
 
