@@ -67,7 +67,7 @@ stage('Docker Push') {
     steps {
         script {
           sh 'docker login -u mohamedridhaa -p Facebook1'
-          sh 'docker push mohamedridhaa/angular_test:tagname
+          sh 'docker push mohamedridhaa/angular_test:tagname'
             }
         }
     }
