@@ -14,7 +14,9 @@ RUN npm install -g http-server
 WORKDIR /usr/apps/docker-test
 
 # Copy only the necessary files (e.g., the 'dist' directory)
-COPY dist /usr/apps/docker-test/dist
+COPY dist/test /usr/apps/docker-test/dist
+
+RUN ng serve
 
 # Expose the port on which the application will run
 EXPOSE 8080
