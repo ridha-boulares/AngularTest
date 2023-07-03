@@ -66,7 +66,7 @@ pipeline {
 stage('Docker Push') {
     steps {
         script {
-            docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+            docker.withRegistry {
                 def app.push()
             }
         }
