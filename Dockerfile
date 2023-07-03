@@ -20,4 +20,4 @@ COPY dist/test /usr/apps/docker-test/dist/test
 EXPOSE 8181
 
 # Run the http-server command to serve the application
-CMD ["http-server", "-p", "8181", "-c-1", "dist"]
+CMD ["http-server", "-s"]
