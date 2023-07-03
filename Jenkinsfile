@@ -75,10 +75,6 @@ stage('Docker Push') {
 
 
 
-        stage('Launch') {
-            steps {
-                sh 'ng serve -o'
-            }
-        }
+      
     }
 }
