@@ -33,7 +33,7 @@ pipeline {
             }
         }
       
-       stage('Publish to Nexus') {
+       /*stage('Publish to Nexus') {
     steps {
         nexusArtifactUploader artifacts: [
             [
@@ -51,12 +51,19 @@ pipeline {
         protocol: 'http',
         repository: 'jenkins'
     }
-}
+}*/
 
 
-        stage('List Files 2') {
+        stage('Docker Build') {
             steps {
-                sh 'ls -lat'
+                app = docker.build("mohamedridhaa/angular_test:tagname")
+            }
+        }
+              stage('Docker Push') {
+            steps {
+                app = docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){
+                  app.push()
+                }
             }
         }
 
