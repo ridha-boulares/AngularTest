@@ -16,7 +16,7 @@ pipeline {
         }
       
 
-       /* stage('Build') {
+        stage('Build') {
             steps {
                 sh 'CI=false npm run build --prod'
             }
@@ -52,7 +52,7 @@ pipeline {
         protocol: 'http',
         repository: 'jenkins'
     }
-}
+}*/
 
 
   stage('Docker Build') {
@@ -71,16 +71,16 @@ stage('Docker Push') {
           sh 'docker push mohamedridhaa/angular_test:tagname'
             }
         }
-    }*/
+    }
 
 
-stage('launch'){
+/*stage('launch'){
   steps{
     script{
       sh 'ng serve'
     }
   }
-}
+}*/
 
       
     }
