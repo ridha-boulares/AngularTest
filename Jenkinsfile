@@ -14,6 +14,7 @@ pipeline {
                 }
             }
         }
+      
 
         stage('Build') {
             steps {
@@ -73,7 +74,13 @@ stage('Docker Push') {
     }
 
 
-
+stage('launch'){
+  steps{
+    script{
+      sh 'ng serve'
+    }
+  }
+}
 
       
     }
