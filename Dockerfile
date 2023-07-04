@@ -8,13 +8,20 @@
 #FROM nginx:alpine
 #COPY --from=node /app/dist/test /usr/share/nginx/html
 
-
 # Base image
-FROM nginx:latest
+FROM node:latest
 
-# Copy Angular app files to the Nginx web server directory
-COPY dist/test /usr/share/nginx/html
+# Set working directory
+WORKDIR /usr/src/app
 
-# Change default Nginx port to 8085
+# Copy Angular app files to the container
+COPY dist/my-app /usr/src/app
+
+# Install http-server globally
+RUN npm install -g http-server
+
+# Expose port 8085
 EXPOSE 8085
 
+# Start the http-server to serve the Angular app
+CMD ["http-server", "-p", "8085"]
