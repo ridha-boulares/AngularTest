@@ -1,6 +1,9 @@
 {
   "name": "test",
   "version": "0.0.0",
+  "publishConfig" : {
+    "registry" : "http://192.168.217.133:8081/repository/jenkins/"
+}, 
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -37,7 +40,5 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.6.2"
   }
-  "publishConfig" : {
-    "registry" : "http://192.168.217.133:8081/repository/jenkins/"
-}, 
+ 
 }
