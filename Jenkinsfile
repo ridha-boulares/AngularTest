@@ -36,6 +36,8 @@ pipeline {
 
         stage('Publish to Nexus') {
             steps {
+                sh 'npm login --registry=http://192.168.217.133:8081/repository/jenkins/ --username=admin --password=Facebook1 --email=admin@example.org'
+
                 sh 'npm publish --registry=http://192.168.217.133:8081/repository/jenkins/'
             }
         }
