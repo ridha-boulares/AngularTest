@@ -15,7 +15,7 @@ FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 
 # Copy Angular app files to the container
-COPY dist/my-app /usr/share/nginx/html
+COPY dist/test /usr/share/nginx/html
 
 EXPOSE 80
 
