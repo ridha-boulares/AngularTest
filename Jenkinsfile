@@ -38,8 +38,7 @@ pipeline {
        
         stage('Authenticate with Nexus') {
             steps {
-                sh 'npm adduser --registry http://192.168.217.133:8081/repository/jenkins/ --always-auth -u admin -p Facebook1
-'
+                sh 'npm adduser --registry http://192.168.217.133:8081/repository/jenkins/ --always-auth -u admin -p Facebook1'
             }
         }
       
