@@ -28,7 +28,7 @@ pipeline {
             }
         }
 
-       /* stage('Test Nexus') {
+       stage('Test Nexus') {
             steps {
                 sh 'curl -u admin:Facebook1 -X GET http://192.168.217.133:8081/repository/jenkins/'
             }
@@ -36,23 +36,9 @@ pipeline {
       
        stage('Publish to Nexus') {
     steps {
-        nexusArtifactUploader artifacts: [
-            [
-                artifactId: 'test',
-                classifier: '',
-                file: 'dist.tar.gz',
-                type: 'tar.gz'
-            ]
-        ],
-        credentialsId: 'nexus',
-        groupId: 'test',
-        version: '0.0.0',
-        nexusUrl: '192.168.217.133:8081',
-        nexusVersion: 'nexus3',
-        protocol: 'http',
-        repository: 'jenkins'
+      sh 'npm publish --registry http://192.168.217.133:8081/repository/jenkins/'
     }
-}*/
+}
 
 
   stage('Docker Build') {
