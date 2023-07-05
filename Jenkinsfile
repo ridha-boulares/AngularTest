@@ -40,7 +40,7 @@ pipeline {
        stage('Publish to Nexus') {
     steps {
      
-      sh 'npm publish --registry=http://192.168.217.133:8081/repository/jenkins/'
+      sh 'npm publish --registry=http://192.168.217.133:8081/repository/jenkins/ -u admin:Facebook1'
     }
 }
 
