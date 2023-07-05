@@ -17,6 +17,6 @@ WORKDIR /usr/share/nginx/html
 # Copy Angular app files to the container
 COPY dist/my-app /usr/share/nginx/html
 
-EXPOSE 8085
+EXPOSE 80
 
 
