@@ -38,7 +38,7 @@ pipeline {
        
         stage('Authenticate with Nexus') {
             steps {
-                sh 'npx npm-cli-login -u admin -p Facebook1 -r http://192.168.217.133:8081/repository/jenkins/'
+                sh 'npm adduser --registry http://192.168.217.133:8081/repository/jenkins/ --always-auth -u admin -p Facebook1 -e metjaku@gmail.com'
             }
         }
       
