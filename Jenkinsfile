@@ -34,9 +34,11 @@ pipeline {
             }
         }
 
-      
+      stage('token'){
+        steps{
+          sh " echo -n 'admin:Facebook1' | openssl base64"
        
-        stage('Authenticate with Nexus') {
+        /*stage('Authenticate with Nexus') {
             steps {
                 sh 'npm adduser --registry http://192.168.217.133:8081 --always-auth -u admin -p Facebook1'
             }
