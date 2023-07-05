@@ -2,7 +2,7 @@
   "name": "test",
   "version": "0.0.0",
   "publishConfig" : {
-    "registry" : "http://192.168.217.133:8081/repository/jenkins/"
+    "registry" : "http://localhost:8081/repository/jenkins/"
 }, 
   "scripts": {
     "ng": "ng",
