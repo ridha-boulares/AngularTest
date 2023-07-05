@@ -1,4 +1,4 @@
-# Stage 1
+# Stage 1"
 #FROM node:16.16.0 as node
 #WORKDIR /app
 #COPY . .
@@ -9,19 +9,14 @@
 #COPY --from=node /app/dist/test /usr/share/nginx/html
 
 # Base image
-FROM node:latest
+FROM nginx:alpine
 
 # Set working directory
-WORKDIR /usr/src/app
+WORKDIR /usr/share/nginx/html
 
 # Copy Angular app files to the container
-COPY dist/my-app /usr/src/app
+COPY dist/my-app /usr/share/nginx/html
 
-# Install http-server globally
-RUN npm install -g http-server
-
-# Expose port 8085
 EXPOSE 8085
 
-# Start the http-server to serve the Angular app
-CMD ["http-server", "-p", "8085"]
+
