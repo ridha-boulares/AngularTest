@@ -73,14 +73,14 @@ stage('Docker Push') {
         }
     }
 
-
+/*
 stage('launch'){
   steps{
     script{
       sh 'ng serve'
     }
   }
-}
+}*/
 
       
     }
