@@ -33,6 +33,14 @@ pipeline {
                 sh 'curl -u admin:Facebook1 -X GET http://192.168.217.133:8081/repository/jenkins/'
             }
         }
+
+      
+        stage('Login to Nexus') {
+            steps {
+                sh 'npm login --registry http://192.168.217.133:8081/repository/jenkins/'
+            }
+        }
+
       
        stage('Publish to Nexus') {
     steps {
